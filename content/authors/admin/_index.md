@@ -71,6 +71,6 @@ email: ""
 highlight_name: false
 ---
 
-Dr. Shonn Sheng-Lun Cheng received his doctoral degree in learning technologies at The Ohio State University in 2019. Then, he pursued one-year postdoctoral training in quantitative methodology at Virginia Commonwealth University. Currently, Dr. Cheng is an assistant professor of instructional systems design and technology at Sam Houston State University in the United States. 
+Dr. Shonn Sheng-Lun Cheng received his doctoral degree in learning technologies at The Ohio State University in 2019. Then, he pursued one-year postdoctoral training in quantitative methodology at Virginia Commonwealth University. Currently, Dr. Cheng is an assistant professor of instructional systems design and technology at Sam Houston State University. 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
