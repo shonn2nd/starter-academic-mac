@@ -44,4 +44,6 @@ abstract: The purpose of this study is to examine the relations among teacher va
   beliefs around technology integration is discussed. © 2018 Elsevier Ltd. All rights
   reserved.
 publication: '*Teaching and Teacher Education*'
+url_pdf: https://www.sciencedirect.com/science/article/abs/pii/S0742051X17319522
+doi: 10.1016/j.tate.2018.04.014
 ---
