@@ -6,7 +6,7 @@ title: Shonn Sheng-Lun Cheng
 superuser: true
 
 # Role/position/tagline
-role: Assistant Professor of Instructional Systems Design and Technology
+role: Assistant Professor
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -14,11 +14,11 @@ organizations:
   url: https://www.shsu.edu/
 
 # Short bio (displayed in user profile at end of posts)
-bio: Assistant Professor of Instructional Systems Design and Technology at Sam Houston State University
+bio: Assistant Professor at Sam Houston State University
 
 # Interests to show in About widget
 interests:
-- Educational Research
+- Research
 
 # Education to show in About widget
 education:
@@ -71,6 +71,6 @@ email: ""
 highlight_name: false
 ---
 
-Hi! This is my website.
+Dr. Shonn Sheng-Lun Cheng received his doctoral degree in learning technologies at The Ohio State University in 2019. Then, he pursued one-year postdoctoral training in quantitative methodology at Virginia Commonwealth University. Currently, Dr. Cheng is an assistant professor of instructional systems design and technology at Sam Houston State University in the United States. 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
