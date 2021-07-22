@@ -14,7 +14,7 @@ organizations:
   url: https://www.shsu.edu/
 
 # Short bio (displayed in user profile at end of posts)
-bio: Assistant Professor of Instructional Systems Design and Technology at Sam Houston State University.
+bio: Assistant Professor of Instructional Systems Design and Technology at Sam Houston State University
 
 # Interests to show in About widget
 interests:
@@ -71,6 +71,6 @@ email: ""
 highlight_name: false
 ---
 
-Dr. Shonn Sheng-Lun Cheng is an Assisatnt Professor of Instructional Systems Design and Technology at Sam Houston State University. 
+Hi! This is my website.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
