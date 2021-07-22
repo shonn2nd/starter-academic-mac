@@ -2,7 +2,7 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: Examining high-school students' motivation change through a person-centered
-  approach.
+  approach
 subtitle: ''
 summary: ''
 authors:
