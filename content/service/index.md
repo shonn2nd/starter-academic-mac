@@ -13,5 +13,23 @@ header:
   caption: ""
   image: ""
 ---
-
-testing
+### __Editorial Board__  
+* Frontiers in Education (2021-present)
+### __Ad Hoc Journal Reviewers__  
+* Asia Pacific Education Review
+* Assessment for Effective Intervention
+* Computers & Education
+* Distance Education
+* Journal of Computer Assisted Learning
+* Journal of Computers in Education
+* Journal of Research on Technology in Education
+* Teaching and Teacher Education              
+* The Internet and Higher Education
+### __International/National Academic Association__  
+## American Educational Research Association
+* Secretary/Treasurer of SIG 151 Technology as an Agent of Change in Teaching and Learning (2021-present)
+* Communications Officer of SIG 52 Instructional Technology (2020-2021)
+* Graduate Student Representative of SIG 31 Design and Technology (2016-2017)
+### __Dissertation Chair/Committee__  
+## Sam Houston State University
+* Joseph Guidry (co-chair; 2020-2021; pass)
