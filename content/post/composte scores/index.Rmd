@@ -1,0 +1,32 @@
+---
+title: "Compute Composite Scores"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+Computing composite scores is very common in educational research since for many studies, the primary interest is to examine the relations between constructs, not items. For instance, you may be interested in the relation between academic self-efficacy and academic achievement, and academic self-efficacy is measured by multiple similar items. In this post, I am going to show you how to compute composite scores or means aggregated over multiple items. There are at least two approaches to achieve the goal. Let's load necessary packages first.
+
+```{r eval=F}
+library(tidyverse)
+```
+
+## First Approach
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
