@@ -47,15 +47,21 @@ social:
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/shonn2nd
-- icon: graduation-cap  # Alternatively, use `google-scholar` icon from `ai` icon pack
-  icon_pack: fas
-  link: https://scholar.google.com/citations?user=A_y6nEsAAAAJ&hl=en&oi=ao
-- icon: github
-  icon_pack: fab
-  link: https://github.com/shonn2nd
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/shonn-sheng-lun-cheng-2220b81b2/
+- icon: graduation-cap  # Alternatively, use `google-scholar` icon from `ai` icon pack
+  icon_pack: fas
+  link: https://scholar.google.com/citations?user=A_y6nEsAAAAJ&hl=en&oi=ao
+- icon: researchgate
+  icon_pack: ai
+  link: https://www.researchgate.net/profile/Shonn-Sheng-Lun-Cheng
+- icon: orcid
+  icon_pack: ai
+  link: https://orcid.org/0000-0003-2993-2031
+- icon: github
+  icon_pack: fab
+  link: https://github.com/shonn2nd
 
 # Link to a PDF of your resume/CV.
 # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.toml`, 
