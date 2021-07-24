@@ -18,9 +18,7 @@ bio: Assistant Professor at Sam Houston State University
 
 # Interests to show in About widget
 interests:
-- Psychological Process in Digital Learning
-- Social Media
-- Research Methods
+- Educational Research
 
 # Education to show in About widget
 education:
