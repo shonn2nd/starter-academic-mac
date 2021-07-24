@@ -33,6 +33,7 @@ enableGitInfo: false
 summaryLength: 30
 paginate: 10
 enableEmoji: true
+googleAnalytics: "G-58N3K03PHY"
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
 ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
