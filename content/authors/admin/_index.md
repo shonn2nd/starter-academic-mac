@@ -5,8 +5,8 @@ role: Assistant Professor
 output: pdf_document
 bio: Assistant Professor at Sam Houston State University
 interests: 
-  - Research
-  - Data Analysis
+  - Motivation and self-regulated learning in digital learning environments
+  - Data analysis
 education:
   courses:
   - course: PhD in Learning Technologies
