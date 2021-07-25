@@ -1,5 +1,5 @@
 ---
-title: "Compute Composite Scores"
+title: "Compute Composite Scores (Mean)"
 output: html_document
 # Date published
 date: "2021-07-23T00:00:00Z"
@@ -16,7 +16,7 @@ categories:
 
 ## Introduction
 
-Computing composite scores is very common in educational research since for many studies, the primary interest is to examine the relations between constructs, not items. For instance, you may be interested in the relation between academic self-efficacy and academic achievement, and academic self-efficacy is measured by multiple similar items. In this post, I am going to show you how to compute composite scores or means aggregated over multiple items. There are at least two approaches to achieve the goal.    
+In this post, I am going to demonstrate how to compute composite scores or means aggregated over multiple items. There are **at least** two approaches to achieve the goal.    
 
 Let's load necessary packages first.
 
@@ -25,64 +25,84 @@ Let's load necessary packages first.
 library(tidyverse)
 ```
 
-Also, let's take a quick look at our data set.
+Create hypothetical data sets: one with complete data and one with missing values.
 
 
 ```r
-mpg
+#id = unique id number for each participant
+#se refers self-efficacy
+#se1 refers to the first survey item of the self-efficacy scale
+mydata<-data.frame(
+  id = c(1:3),
+  se1 = c(1, 3, 4),
+  se2 = c(2, 2, 5),
+  se3 = c(1, 3, 3)
+)
+
+missdata<-data.frame(
+  id = c(1:3),
+  se1 = c(1, 3, 4),
+  se2 = c(NA, 2, 5),
+  se3 = c(1, 3, NA)
+)
+```
+
+Check our data set.
+
+```r
+mydata
 ```
 
 ```
-## # A tibble: 234 x 11
-##    manufacturer model    displ  year   cyl trans   drv     cty   hwy fl    class
-##    <chr>        <chr>    <dbl> <int> <int> <chr>   <chr> <int> <int> <chr> <chr>
-##  1 audi         a4         1.8  1999     4 auto(l… f        18    29 p     comp…
-##  2 audi         a4         1.8  1999     4 manual… f        21    29 p     comp…
-##  3 audi         a4         2    2008     4 manual… f        20    31 p     comp…
-##  4 audi         a4         2    2008     4 auto(a… f        21    30 p     comp…
-##  5 audi         a4         2.8  1999     6 auto(l… f        16    26 p     comp…
-##  6 audi         a4         2.8  1999     6 manual… f        18    26 p     comp…
-##  7 audi         a4         3.1  2008     6 auto(a… f        18    27 p     comp…
-##  8 audi         a4 quat…   1.8  1999     4 manual… 4        18    26 p     comp…
-##  9 audi         a4 quat…   1.8  1999     4 auto(l… 4        16    25 p     comp…
-## 10 audi         a4 quat…   2    2008     4 manual… 4        20    28 p     comp…
-## # … with 224 more rows
+##   id se1 se2 se3
+## 1  1   1   2   1
+## 2  2   3   2   3
+## 3  3   4   5   3
 ```
 
-Create unique ID and assume each row represents a unique case
+```r
+missdata
+```
+
+```
+##   id se1 se2 se3
+## 1  1   1  NA   1
+## 2  2   3   2   3
+## 3  3   4   5  NA
+```
+
+We are ready to wrangle the data.
+
+## First Approach: R Base Functions
+Since we are interested in computing means, `rowMeans` will do the work. We need to create a new variable called **se** to represent each participants' overall level of self-efficacy and specify what columns or items are needed for computing the composite score for each person (mean in this case). Let's play with our complete data set `mydata` first.
+
+```r
+mydata$se<-rowMeans(mydata[, c("se1", "se2", "se3")], na.rm=T)
+mydata
+```
+
+```
+##   id se1 se2 se3       se
+## 1  1   1   2   1 1.333333
+## 2  2   3   2   3 2.666667
+## 3  3   4   5   3 4.000000
+```
+`na.rm` is an argument for determining how to deal with cases with missing values. It is not particularly relevant here since there is no missing value in `mydata`. 
+
+## Second Approach:Tidymodels
 
 
 ```r
-mpg$id <- seq.int(nrow(mpg))
-```
-
-## First Approach
-
-
-```r
-mpg$eff<-rowMeans(mpg[,c("displ", "cyl")], na.rm=T)
-```
-
-## Second Approach
-
-
-```r
-mpg %>% mutate (eff2 = rowMeans(select(.,c(displ, cyl)), na.rm=T))
+mydata %>% mutate (se = rowMeans(select(., c("se1", "se2", "se3")), na.rm=T))
 ```
 
 ```
-## # A tibble: 234 x 14
-##    manufacturer model    displ  year   cyl trans   drv     cty   hwy fl    class
-##    <chr>        <chr>    <dbl> <int> <int> <chr>   <chr> <int> <int> <chr> <chr>
-##  1 audi         a4         1.8  1999     4 auto(l… f        18    29 p     comp…
-##  2 audi         a4         1.8  1999     4 manual… f        21    29 p     comp…
-##  3 audi         a4         2    2008     4 manual… f        20    31 p     comp…
-##  4 audi         a4         2    2008     4 auto(a… f        21    30 p     comp…
-##  5 audi         a4         2.8  1999     6 auto(l… f        16    26 p     comp…
-##  6 audi         a4         2.8  1999     6 manual… f        18    26 p     comp…
-##  7 audi         a4         3.1  2008     6 auto(a… f        18    27 p     comp…
-##  8 audi         a4 quat…   1.8  1999     4 manual… 4        18    26 p     comp…
-##  9 audi         a4 quat…   1.8  1999     4 auto(l… 4        16    25 p     comp…
-## 10 audi         a4 quat…   2    2008     4 manual… 4        20    28 p     comp…
-## # … with 224 more rows, and 3 more variables: id <int>, eff <dbl>, eff2 <dbl>
+##   id se1 se2 se3       se
+## 1  1   1   2   1 1.333333
+## 2  2   3   2   3 2.666667
+## 3  3   4   5   3 4.000000
 ```
+`mutate` is a great function to create new variables within Tidymodels. `select` is another function to **select** the variables needed. **.** (dot) refers to `mydata`. Here, `na.rm` is also not particularly relevant here since there is no missing value. It looks like we have identical values here. Good!
+
+## Deal with Missing Values
+
