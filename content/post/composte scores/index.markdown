@@ -73,7 +73,7 @@ missdata
 We are ready to wrangle the data.
 
 ## First Approach: R Base Functions
-Since we are interested in computing means, `rowMeans` will do the work. We need to create a new variable called **se** to represent each participants' overall level of self-efficacy and specify what columns or items are needed for computing the composite score for each person (mean in this case). Let's play with our complete data set `mydata` first.
+Since we are interested in computing means, `rowMeans` will do the work. We need to create a new variable called **se** to represent each participant's overall level of self-efficacy and specify what columns or items are needed for computing the composite score for each person (mean in this case). Let's play with our complete data set `mydata` first.
 
 ```r
 mydata$se<-rowMeans(mydata[, c("se1", "se2", "se3")], na.rm=T)
