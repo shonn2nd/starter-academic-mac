@@ -102,7 +102,53 @@ mydata %>% mutate (se = rowMeans(select(., c("se1", "se2", "se3")), na.rm=T))
 ## 2  2   3   2   3 2.666667
 ## 3  3   4   5   3 4.000000
 ```
-`mutate` is a great function to create new variables within Tidymodels. `select` is another function to **select** the variables needed. **.** (dot) refers to `mydata`. Here, `na.rm` is also not particularly relevant here since there is no missing value. It looks like we have identical values here. Good!
+`mutate` is a great function to create new variables within Tidymodels. `select` is another function to **select** the variables needed. **.** (dot) refers to `mydata`. Here, `na.rm` is also not particularly relevant here since there is no missing value. It looks like we have identical values. Good!
 
 ## Deal with Missing Values
 
+`na.rm` will be relevant when dealing with data containing missing values. `na.rm = FALSE` is very similar to the idea of **list-wise deletion**. That is, R will not compute the composite score for any row or person that contains a missing value for the items you selected. On the contrary, `na.rm = TRUE` is very similar to the idea of the **full information** approach. That is, R will utilize all the possible information from the items to compute the mean. If there is a missing value in one of the three items, R will still compute the mean based on the values of them other two items. 
+
+
+```r
+#list-wise deletion approach
+missdata$list<-rowMeans(missdata[, c("se1", "se2", "se3")], na.rm=F)
+#full information approach
+missdata$full<-rowMeans(missdata[, c("se1", "se2", "se3")], na.rm=T)
+missdata
+```
+
+```
+##   id se1 se2 se3     list     full
+## 1  1   1  NA   1       NA 1.000000
+## 2  2   3   2   3 2.666667 2.666667
+## 3  3   4   5  NA       NA 4.500000
+```
+As you can see here, since there is a missing value for person 1 and person 3 in one of the self-efficacy items, `na.rm=F` will discard all the other information from items that do contain information and will not compute the mean for that person. On the contrary, `na.rm=T` will still compute the mean based on the information from items that do not have missing values. This idea is the same with Tidymodels.
+
+
+
+
+```r
+#list-wise deletion approach
+missdata %>% mutate (list = rowMeans(select(., c("se1", "se2", "se3")), na.rm=F))
+```
+
+```
+##   id se1 se2 se3     list
+## 1  1   1  NA   1       NA
+## 2  2   3   2   3 2.666667
+## 3  3   4   5  NA       NA
+```
+
+```r
+#full information approach
+missdata %>% mutate (full = rowMeans(select(., c("se1", "se2", "se3")), na.rm=T))
+```
+
+```
+##   id se1 se2 se3     full
+## 1  1   1  NA   1 1.000000
+## 2  2   3   2   3 2.666667
+## 3  3   4   5  NA 4.500000
+```
+We have the identical results here. Using the full information approach `na.rm=T`, for person 1, the mean is 1 ((1+1)/2) despite a missing value for item 2.
