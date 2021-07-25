@@ -7,6 +7,7 @@ bio: Assistant Professor at Sam Houston State University
 interests: 
   - Psychological Process in Digital Learning
   - Social Media
+  - Research Methods
 education:
   courses:
   - course: PhD in Learning Technologies
