@@ -5,7 +5,8 @@ role: Assistant Professor
 output: pdf_document
 bio: Assistant Professor at Sam Houston State University
 interests: 
-  - Research
+  - Psychological Process in Digital Learning
+  - Social Media
 education:
   courses:
   - course: PhD in Learning Technologies
