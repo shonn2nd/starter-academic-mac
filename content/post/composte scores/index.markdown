@@ -6,8 +6,7 @@ date: "2021-07-23T00:00:00Z"
 
 authors: 
 - admin
-tag: 
-- R
+tags: [R, data wrangling]
 categories: 
 - R
 ---
