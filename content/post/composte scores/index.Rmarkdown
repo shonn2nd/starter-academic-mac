@@ -71,7 +71,7 @@ mydata %>% mutate (se = rowMeans(select(., c("se1", "se2", "se3")), na.rm=T))
 
 ## Deal with Missing Values
 
-`na.rm` will be relevant when dealing with data containing missing values. `na.rm = FALSE` is very similar to the idea of **list-wise deletion**. That is, R will not compute the composite score for any row or person that contains a missing value for the items you selected. On the contrary, `na.rm = TRUE` is very similar to the idea of the **full information** approach. That is, R will utilize all the possible information from the items to compute the mean. If there is a missing value in one of the three items, R will still compute the mean based on the values of them other two items. 
+`na.rm` will be relevant when dealing with data containing missing values. `na.rm = FALSE` is very similar to the idea of **list-wise deletion**. That is, R will not compute the composite score for any row or person that contains a missing value for the items you selected. On the contrary, `na.rm = TRUE` is very similar to the idea of the **full information** approach. That is, R will utilize all the possible information from the items to compute the mean. If there is a missing value in one of the three items, R will still compute the mean based on the values of the other two items. 
 
 ```{r}
 #list-wise deletion approach
