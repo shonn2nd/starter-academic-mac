@@ -6,9 +6,10 @@ output: pdf_document
 bio: Assistant Professor at Sam Houston State University
 interests: 
   - Motivation and self-regulated learning in digital learning environments
-  - STEM (science, technology, engineering, mathematics)
+  - STEM (Science, Technology, Engineering, and Mathematics)
   - Social media
   - Data analysis
+  - R
 education:
   courses:
   - course: PhD in Learning Technologies
