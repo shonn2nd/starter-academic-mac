@@ -52,7 +52,7 @@ mydata
 missdata
 ```
 
-We are ready to wrangle the data.
+We are ready to explore the data.
 
 ## First Approach: R Base Functions
 Since we are interested in computing means, `rowMeans` will do the work. We need to create a new variable called **se** to represent each participant's overall level of self-efficacy and specify what columns or items are needed for computing the composite score for each person (mean in this case). Let's play with our complete data set `mydata` first.
@@ -67,7 +67,7 @@ mydata
 ```{r}
 mydata %>% mutate (se = rowMeans(select(., c("se1", "se2", "se3")), na.rm=T))
 ```
-`mutate` is a great function to create new variables within Tidymodels. `select` is another function to **select** the variables needed. **.** (dot) refers to `mydata`. Here, `na.rm` is also not particularly relevant here since there is no missing value. It looks like we have identical values. Good!
+`mutate` is a great function to **create** new variables within Tidymodels. `select` is another function to **select** the variables needed. **.** (dot) refers to `mydata`. Here, `na.rm` is also not particularly relevant here since there is no missing value. It looks like we have identical values. Good!
 
 ## Deal with Missing Values
 
