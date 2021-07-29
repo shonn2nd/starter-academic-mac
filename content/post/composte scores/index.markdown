@@ -101,7 +101,7 @@ mydata %>% mutate (se = rowMeans(select(., c("se1", "se2", "se3")), na.rm=T))
 ## 2  2   3   2   3 2.666667
 ## 3  3   4   5   3 4.000000
 ```
-`mutate` is a great function to **create** new variables within Tidymodels. `select` is another function to **select** the variables needed. **.** (dot) refers to `mydata`. Here, `na.rm` is also not particularly relevant here since there is no missing value. It looks like we have identical values. Good!
+`mutate` is a great function to **create** new variables. `select` is another function to **select** the variables needed. **.** (dot) refers to `mydata`. Here, `na.rm` is also not particularly relevant here since there is no missing value. It looks like we have identical values. Good!
 
 ## Deal with Missing Values
 
@@ -122,7 +122,7 @@ missdata
 ## 2  2   3   2   3 2.666667 2.666667
 ## 3  3   4   5  NA       NA 4.500000
 ```
-As you can see here, since there is a missing value for person 1 and person 3 in one of the self-efficacy items, `na.rm=F` will discard all the other information from items that do contain information and will not compute the mean for that person. On the contrary, `na.rm=T` will still compute the mean based on the information from items that do not have missing values. This idea is the same with Tidymodels.
+As you can see here, since there is a missing value for person 1 and person 3 in one of the self-efficacy items, `na.rm=F` will discard all the other information from items that do contain information and will not compute the mean for that person. On the contrary, `na.rm=T` will still compute the mean based on the information from items that do not have missing values. This idea is the same when using Tidyverse.
 
 
 
