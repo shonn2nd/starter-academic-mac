@@ -88,7 +88,7 @@ mydata
 ```
 `na.rm` is an argument for determining how to deal with cases with missing values. It is not particularly relevant here since there is no missing value in `mydata`. 
 
-## Second Approach: Tidymodels
+## Second Approach: Tidyverse
 
 
 ```r
