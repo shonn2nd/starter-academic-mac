@@ -1,5 +1,5 @@
 ---
-title: "Compute Composite Scores (Mean)"
+title: "Computing Composite Scores (Mean)"
 output: html_document
 # Date published
 date: "2021-07-23T00:00:00Z"
