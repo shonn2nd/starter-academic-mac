@@ -13,9 +13,6 @@ main:
   - name: Publications
     url: '#publications'
     weight: 50
-  - name: Research
-    url: 'research/'
-    weight: 50
   - name: Teaching
     url: 'teaching/'
     weight: 50
