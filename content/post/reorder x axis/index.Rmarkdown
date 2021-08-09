@@ -1,0 +1,24 @@
+---
+title: "reorder x axis"
+output: html_document
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+diamonds %>% 
+  count(cut_width(carat, 0.5)) %>% 
+  mutate(`cut_width(carat, 0.5)` = fct_reorder(`cut_width(carat, 0.5)`, desc(`cut_width(carat, 0.5)`))) %>% 
+  ggplot(mapping=aes(x=`cut_width(carat, 0.5)`, y = n))+
+  geom_bar(stat='identity')+
+  coord_flip()
+```
+
+}
