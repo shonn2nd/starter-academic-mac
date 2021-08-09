@@ -20,6 +20,7 @@ header:
 * Assessment for Effective Intervention
 * Computers & Education
 * Distance Education
+* Education and Information Technologies
 * Journal of Computer Assisted Learning
 * Journal of Computers in Education
 * Journal of Research on Technology in Education
