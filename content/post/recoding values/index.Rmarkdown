@@ -108,5 +108,5 @@ data %>%
 ```
 By adding `.names` argument, you will be able to specify the output names. In this case, I append **_r** to the old variables.
 
-### Task 3: Recode Values based on Multiple Condtions
+### Task 3: Recode Values based on Multiple Conditions
 [incoming]
