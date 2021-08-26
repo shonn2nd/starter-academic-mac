@@ -149,7 +149,7 @@ data %>%
 ## 5    NA     1     5
 ```
 
-I guess you've found that although these are decent solutions, but one major drawback is that they simply replace the old values with the new ones. Sometimes, what you want is to create new variables for recorded items to avoid confusion. Fortunatelly, `case_when` is also capable of handling that.
+I guess you've found that although these are decent solutions, one major drawback is that they simply replace the old values with the new ones. Sometimes, what you want is to create new variables for recorded items to avoid confusion. Fortunately, `case_when` is also capable of handling that.
 
 
 ```r
