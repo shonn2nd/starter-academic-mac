@@ -1,6 +1,12 @@
 ---
 title: "Recoding Values"
 output: html_document
+
+authors: 
+- admin
+tags: [R, data wrangling]
+categories: 
+- R
 ---
 
 ```{r setup, include=FALSE}
@@ -109,4 +115,26 @@ data %>%
 By adding `.names` argument, you will be able to specify the output names. In this case, I append **_r** to the old variables.
 
 ### Task 3: Recode Values based on Multiple Conditions
-[incoming]
+
+Last, let's work on a more complex task that requires you to recode values based on multiple conditions. For instance, if we want to create a new dichotomous variable, **costHigh** (0 and 1), that is based on specific values of cost1, cost2, and cost3. What should we do? 
+
+```{r}
+#let's create a new dataset
+data2<-data.frame(
+             cost1 = c(2, 3, 4, 2, 3),
+             cost2 = c(1, 2, 3, 4, 5),
+             cost3 = c(2, 4, 3, 2, 4)
+             )
+data2
+
+#create a new variable called costHigh that is based on the values of cost 1, cost2, and cost 3. 
+#If all the values of cost1-cost3 are equal to or lower than 2, then costHigh will be 0.
+#If at least one of the values of cost1-cost3 is higher than 2, then costHigh will be 1.
+
+data2 %>%
+  mutate(costHigh = case_when(
+  cost1 <= 2 & cost2 <= 2 & cost3 <= 2 ~ 0,
+  TRUE ~ 1))
+```
+
+
