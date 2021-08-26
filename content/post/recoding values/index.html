@@ -170,7 +170,7 @@ pre code {
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>Recoding values is one of the most common tasks a researcher needs to before data analysis. For me, often I need to prepare my data in R first before using it for advanced statistical analyses such as M<em>plus</em>. In this case, it is important to recode missing values to a specific extreme value (e.g., -999) since it will be more efficient for M<em>plus</em> to recognize and handle missing values. In this post, I will demonstrate a way to handle the recording task using <code>case_when</code> function in Tidyverse. There are different ways to get this job done, but I feel that <code>case_when</code> makes the most sense to me. Let’s get started.</p>
+<p>Recoding values is one of the most common tasks a researcher needs to do before data analysis. For me, often I need to prepare my data in R first before using it for advanced statistical analyses in M<em>plus</em>. In this case, it is important to recode missing values to a specific extreme value (e.g., -999) since it will be more efficient for M<em>plus</em> to recognize and handle missing values. In this post, I will demonstrate <strong>a way</strong> <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> to handle the recording task using <code>case_when</code> function in Tidyverse. There are different ways to get this job done, but I feel that <code>case_when</code> makes the most sense to me. Let’s get started.</p>
 <pre class="r"><code>#load required packages
 library(tidyverse)</code></pre>
 <p>Let’s create a hypothetical dataset!</p>
@@ -204,7 +204,7 @@ data %&gt;%
 ## 3     4     3     3
 ## 4     2     4     2
 ## 5  -999     5     1</code></pre>
-<p><code>is.na(cost1) ~ -999</code> asks R to evaluate if a specific case is missing information in <strong>cost1</strong>. If a case is missing, then it will be coded as <strong>-999</strong>. <code>TRUE ~ as.numeric(cost1)</code> means that if a specific case is not a missing value in <strong>cost1</strong>, then it will not be changed and will remain as the same numeric value as it was. This approach is ok if you are dealing with a couple of variables. However, if you are to recode several variables at the same time, then, this approach is not efficient. We need a faster way.</p>
+<p><code>is.na(cost1) ~ -999</code> asks R to evaluate if a specific case is missing information in <strong>cost1</strong>. If a case is missing, then (~) it will be coded as <strong>-999</strong>. <code>TRUE ~ as.numeric(cost1)</code> means that if a specific case is not a missing value in <strong>cost1</strong> (the fact that a case doesn’t satisfy the first condtion is <strong>TRUE</strong>), then it will not be changed and will remain the same numeric value as it is. This approach is ok if you are dealing with a couple of variables. However, if you are to recode several variables at the same time, then, this approach is not efficient. We need a faster way.</p>
 <pre class="r"><code>#quicker way: deal with multiple variables at a time
 data %&gt;% 
   mutate(across(cost1:cost3, ~ case_when(
@@ -217,12 +217,58 @@ data %&gt;%
 ## 3     4     3     3
 ## 4     2     4     2
 ## 5  -999     5     1</code></pre>
-<p>As it is shown here, all we need is <code>across</code> function and specify what variables we are going to recode. <strong>Dot (.)</strong> refers to the selected variables (i.e., cost1, cost2, cost3). This block of codes ask R to recode missing values across cost1 to cost3 as -999 and for cases that contain information, they will remain the same numeric value as they were.</p>
+<p>As it is shown here, all we need is <code>across</code> function and specify what variables we are going to recode. <strong>Dot (.)</strong> refers to the selected variables (i.e., cost1, cost2, cost3). This block of codes ask R to recode missing values across cost1 to cost3 as -999 and for cases that contain information, they will remain the same numeric value as they are.</p>
 </div>
-<div id="task-2-recode-values-for-reverse-items" class="section level3">
-<h3>Task 2: Recode Values for Reverse Items</h3>
-<p>[under construction]</p>
+<div id="task-2-recode-values-for-reverse-scoring-items" class="section level3">
+<h3>Task 2: Recode Values for Reverse Scoring Items</h3>
+<p>It is very common to encounter reverse scoring items in educational research. <code>case_when</code> can also be used to recode these items with ease. Suppose that cost1-cost3 are all measured on a 5-point Likert scale and cost 3 is a reverse scoring item. We woud like to recode this item so that 5 will be 1, and 1 will be 5.</p>
+<pre class="r"><code>#check our data again
+data</code></pre>
+<pre><code>##   cost1 cost2 cost3
+## 1     2     1    NA
+## 2     3     2    NA
+## 3     4     3     3
+## 4     2     4     2
+## 5    NA     5     1</code></pre>
+<pre class="r"><code>#recode one reverse scoring item
+data %&gt;%
+  mutate(cost3 = case_when(
+    cost3 == 5 ~ 1, 
+    cost3 == 4 ~ 2,
+    cost3 == 3 ~ 3,
+    cost3 == 2 ~ 4,
+    cost3 == 1 ~ 5
+    ))</code></pre>
+<pre><code>##   cost1 cost2 cost3
+## 1     2     1    NA
+## 2     3     2    NA
+## 3     4     3     3
+## 4     2     4     4
+## 5    NA     5     5</code></pre>
+<p>How about multiple items? Again, <code>across</code> is your friend:</p>
+<pre class="r"><code>#recorde multiple reverse scoring items at the same time
+data %&gt;%
+  mutate(across(cost1:cost3, ~ case_when(
+    . == 5 ~ 1, 
+    . == 4 ~ 2,
+    . == 3 ~ 3,
+    . == 2 ~ 4,
+    . == 1 ~ 5
+    )))</code></pre>
+<pre><code>##   cost1 cost2 cost3
+## 1     4     5    NA
+## 2     3     4    NA
+## 3     2     3     3
+## 4     4     2     4
+## 5    NA     1     5</code></pre>
+<p>I guess you’ve found that although these are decent solutions, but one of the drawback is that they simply replace the old values with the new ones. Sometimes, you want to create new variables for recorded items to avoid confusion. No worry. <code>case_when</code> is also capable of handling that.</p>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This is the beauty of R： All roads lead to Rome.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 
 
