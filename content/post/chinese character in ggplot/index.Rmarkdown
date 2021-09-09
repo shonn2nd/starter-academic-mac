@@ -1,0 +1,105 @@
+---
+title: "How to Display Chinese Character in ggplot2"
+output: html_document
+draft: FALSE
+
+authors: 
+- admin
+tags: [R, text mining, Chinese]
+categories: 
+- R
+---
+
+# Introduction
+
+In this post, I am going to demonstrate how to display Chinese Character in `ggplot2`
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE}
+#loading necessary packages
+library(rvest)
+library(xml2)
+library(tidyverse)
+library(tidytext)
+library(png)
+library(knitr)
+```
+
+Let's get our text data by scraping Chien-Ming Wang's page on Wikipedia.
+
+```{r echo=F}
+img1_path <- "/Users/shsu/OneDrive/website/starter-academic-mac/content/post/chinese character in ggplot/wang.png"
+include_graphics(img1_path)
+```
+
+```{r}
+hot100page <- "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BB%BA%E6%B0%91_(%E6%A3%92%E7%90%83%E5%93%A1)"
+hot100 <- read_html(hot100page)
+hot100
+str(hot100)
+```
+
+```{r}
+body_nodes <- hot100 %>% 
+ html_node("body") %>% 
+ html_children()
+body_nodes
+```
+
+```{r}
+bio <- hot100 %>% 
+  rvest::html_nodes('body') %>% 
+  xml2::xml_find_all("//div[contains(@class, 'mw-body-content mw-content-ltr')]") %>% 
+  rvest::html_text()
+
+bio_df <- data.frame(bio)
+bio_df<-gsub("臺灣出生大聯盟選手列表.*","",bio_df)
+bio_df <- data.frame(bio_df)
+bio_df<-bio_df %>% rename(text = 1)
+```
+
+```{r}
+toks<-bio_df %>%
+  unnest_tokens(word, text) %>% filter(!str_detect(word, "[:digit:]") &
+                                          !str_detect(word, "[a-z]")) 
+toks%>%
+  count(word, sort = TRUE) %>%
+  filter(n > 60) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(n, word)) +
+  geom_col() +
+  labs(y = NULL)
+```
+
+```{r}
+library(showtext)
+showtext_auto()
+
+toks%>%
+  count(word, sort = TRUE) %>%
+  filter(n > 60) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(n, word)) +
+  geom_col() +
+  labs(y = NULL) +
+  labs(x = "Frequency")
+```
+
+```{r}
+bio_clean<-bio_df$text %>%
+  str_remove_all("\\n|[:digit:]|[:lower:]|[:upper:]|[:punct:]") %>% as.data.frame() %>% rename(text = 1)
+
+toks<-bio_clean %>% unnest_tokens(word, text, token = "ngrams", n = 2)
+
+toks%>%
+  count(word, sort = TRUE) %>%
+  filter(n > 8) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(n, word)) +
+  geom_col() +
+  labs(y = NULL) +
+  labs(x = "Frequency")
+```
