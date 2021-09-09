@@ -1,0 +1,246 @@
+---
+title: "Text Mining: Episodio 4"
+output: html_document
+# Date published
+date: "2021-08-26T00:00:00Z"
+
+authors: 
+- admin
+tags: [R, text mining]
+categories: 
+- R
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+In this post, I am going to play around text mining using R. This is simply for my own practice and for fun. I am deeply indebted to the instructors at [The Laser Institute](https://www.fi.ncsu.edu/projects/laser-institute/) and text mining guru [Julia Silge](https://juliasilge.com/) and [David Robinson](http://varianceexplained.org/posts/), who make text mining using R so accessible to laypersons like me!!
+
+Let's load necessary packages first.
+
+```{r eval=T, message=F}
+library(tidyverse)
+library(tidytext)
+library(tidyr)
+library(xlsx)
+library(forcats)
+library(igraph)
+library(ggraph)
+```
+
+```{r}
+#import our data
+data<-read.xlsx("data.xlsx", sheetIndex = 1)
+
+#check out dataset
+#turn our dataset into a tibble
+data<-as_tibble(data)
+data
+```
+
+```{r}
+#Relationships between words: 2-grams and correlations
+#tokenization
+cg_bigrams <- data %>% filter(group == "cg") %>% 
+  unnest_tokens(bigram, title, token = "ngrams", n = 2)
+
+stats_bigrams <- data %>% filter(group == "stats") %>% 
+  unnest_tokens(bigram, title, token = "ngrams", n = 2)
+
+#check frequency for cg
+cg_bigrams %>%
+  count(bigram, sort = TRUE)
+
+#check frequency for stats
+stats_bigrams %>%
+  count(bigram, sort = TRUE)
+```
+
+Not particularly meaning here. Too many stop words.
+
+```{r}
+#separate bigrams into two columns
+cg_bigrams_separated <- cg_bigrams %>%
+  separate(bigram, c("word1", "word2"), sep = " ")
+
+stats_bigrams_separated <- stats_bigrams %>%
+  separate(bigram, c("word1", "word2"), sep = " ")
+
+#remove stop words
+#still separated
+cg_bigrams_filtered <- cg_bigrams_separated %>%
+  filter(!word1 %in% stop_words$word) %>%
+  filter(!word2 %in% stop_words$word)
+
+stats_bigrams_filtered <- stats_bigrams_separated %>%
+  filter(!word1 %in% stop_words$word) %>%
+  filter(!word2 %in% stop_words$word)
+
+# new bigram counts without stop words for cg:
+cg_bigram_counts <- cg_bigrams_filtered %>% 
+  count(word1, word2, sort = TRUE)
+cg_bigram_counts
+
+# new bigram counts without stop words for stats:
+stats_bigram_counts <- stats_bigrams_filtered %>% 
+  count(word1, word2, sort = TRUE)
+stats_bigram_counts
+```
+
+Now, this is much meaningful. A lot of people have been making posts related to climate change, climate crisis, and fight climate on the climate change forum and time series on the statistics forum.
+
+```{r}
+#combine separate words for cg
+cg_bigrams_united <- cg_bigrams_filtered %>%
+  unite(bigram, word1, word2, sep = " ")
+cg_bigrams_united
+
+#combine separate words for stats
+stats_bigrams_united <- stats_bigrams_filtered %>%
+  unite(bigram, word1, word2, sep = " ")
+stats_bigrams_united
+```
+
+```{r}
+#Relationships between words: 3-grams and correlations
+data %>% filter(group == "cg") %>%
+  unnest_tokens(trigram, title, token = "ngrams", n = 3) %>%
+  separate(trigram, c("word1", "word2", "word3"), sep = " ") %>%
+  filter(!word1 %in% stop_words$word,
+         !word2 %in% stop_words$word,
+         !word3 %in% stop_words$word) %>%
+  count(word1, word2, word3, sort = TRUE)
+
+data %>% filter(group == "stats")  %>%
+  unnest_tokens(trigram, title, token = "ngrams", n = 3) %>%
+  separate(trigram, c("word1", "word2", "word3"), sep = " ") %>%
+  filter(!word1 %in% stop_words$word,
+         !word2 %in% stop_words$word,
+         !word3 %in% stop_words$word) %>%
+  count(word1, word2, word3, sort = TRUE)
+```
+
+Time for deeper analyses.
+
+```{r}
+#combine cg_bigrams_united and stats_bigrams_united
+#stop words have been removed
+bigrams_united<-rbind(cg_bigrams_united, stats_bigrams_united)
+
+bigram_tf_idf <- bigrams_united %>%
+  count(group, bigram) %>%
+  bind_tf_idf(bigram, group, n) %>%
+  arrange(desc(tf_idf))
+
+bigram_tf_idf
+```
+
+```{r}
+#visualization
+#fct_reorder(bigram, tf_dif) is the most classic argument here
+
+bigram_tf_idf %>%
+  group_by(group) %>%
+  slice_max(tf_idf, n = 15) %>%
+  ungroup() %>%
+  ggplot(aes(tf_idf, fct_reorder(bigram, tf_idf), fill = group)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~group, ncol = 2, scales = "free") +
+  labs(x = "tf-idf", y = NULL)
+```
+It seems that the tf-idf approach is really effective in detecting the pattern in your text.
+
+```{r}
+#sentiment analysis
+bigrams <- data %>%
+  unnest_tokens(bigram, title, token = "ngrams", n = 2)
+
+bigrams_separated <- bigrams %>%
+  separate(bigram, c("word1", "word2"), sep = " ")
+
+#negating words
+bigrams_separated %>%
+  filter(word1 == "not") %>%
+  count(word1, word2, sort = TRUE)
+
+#AFINN
+AFINN <- get_sentiments("afinn")
+AFINN
+
+not_words <- bigrams_separated %>%
+  filter(word1 == "not") %>%
+  inner_join(AFINN, by = c(word2 = "word")) %>%
+  count(word2, value, sort = TRUE)
+
+#reorder(word2, contribution) is a classic argument here
+not_words %>%
+  mutate(contribution = n * value) %>%
+  arrange(desc(abs(contribution))) %>%
+  head(20) %>%
+  mutate(word2 = reorder(word2, contribution)) %>%
+  ggplot(aes(n * value, word2, fill = n * value > 0)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = "Sentiment value * number of occurrences",
+       y = "Words preceded by \"not\"")
+
+#expanding negating words
+negation_words <- c("not", "no", "never", "without")
+
+negated_words <- bigrams_separated %>%
+  filter(word1 %in% negation_words) %>%
+  inner_join(AFINN, by = c(word2 = "word")) %>%
+  count(word1, word2, value, sort = TRUE)
+
+negated_words %>%
+  mutate(contribution = abs(n * value)) %>%
+  group_by(word1) %>% 
+  arrange(desc(contribution), .by_group = T)
+
+negated_words %>%
+  mutate(contribution = abs(n * value)) %>%
+  mutate(word2 = reorder(word2, contribution)) %>%
+  ggplot(aes(n * value, word2, fill = n * value > 0)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~word1, ncol = 2, scales = "free") +
+  labs(x = "Sentiment value * number of occurrences",
+       y = "Words preceded by negating words")
+```
+
+```{r}
+#visualizing a network of bigrams
+#need to filter stop words
+bigrams_filtered <- bigrams_separated %>%
+  filter(!word1 %in% stop_words$word) %>%
+  filter(!word2 %in% stop_words$word)
+
+bigram_counts <- bigrams_filtered %>% 
+  count(word1, word2, sort = TRUE)
+
+bigram_counts
+
+bigram_graph <- bigram_counts %>%
+  filter(n > 4) %>%
+  graph_from_data_frame()
+
+bigram_graph
+
+set.seed(2017)
+ggraph(bigram_graph, layout = "fr") +
+  geom_edge_link() +
+  geom_node_point() +
+  geom_node_text(aes(label = name), vjust = 1, hjust = 1)
+
+
+set.seed(2020)
+a <- grid::arrow(type = "closed", length = unit(.15, "inches"))
+
+ggraph(bigram_graph, layout = "fr") +
+  geom_edge_link(aes(edge_alpha = n), show.legend = FALSE,
+                 arrow = a, end_cap = circle(.07, 'inches')) +
+  geom_node_point(color = "lightblue", size = 5) +
+  geom_node_text(aes(label = name), vjust = 1, hjust = 1) +
+  theme_void()
+```
