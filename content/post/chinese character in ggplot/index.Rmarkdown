@@ -1,7 +1,7 @@
 ---
 title: "How to Display Chinese Character in ggplot2"
 output: html_document
-draft: FALSE
+draft: TRUE
 
 authors: 
 - admin
