@@ -1,6 +1,7 @@
 ---
 title: "Text Mining: Episodio 4"
 output: html_document
+draft: true
 # Date published
 date: "2021-08-26T00:00:00Z"
 
@@ -500,9 +501,9 @@ bigram_graph
 ```
 
 ```
-## IGRAPH 60f62b7 DN-- 68 49 -- 
+## IGRAPH 46b4f8d DN-- 68 49 -- 
 ## + attr: name (v/c), n (e/n)
-## + edges from 60f62b7 (vertex names):
+## + edges from 46b4f8d (vertex names):
 ##  [1] climate    ->change       time       ->series      
 ##  [3] climate    ->crisis       chi        ->squared     
 ##  [5] statistics ->discussion   fight      ->climate     
