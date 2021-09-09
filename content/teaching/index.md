@@ -23,5 +23,5 @@ header:
 * ISDT 7388: Doctoral Field Studies (doctoral; 100% online)  
 
 ## __The Ohio State University__  
-* ESLTECH 8226: Methods of Inquiry in Learning Technologies (graduate; face to face; co-instructor with Dr. Kui Xie)  
 * ESLTECH 2011: Keys to Academic Success for Online Learners (undergraduate; 100% online)  
+* ESLTECH 8226: Methods of Inquiry in Learning Technologies (graduate; face to face; co-instructor with Dr. Kui Xie)  
