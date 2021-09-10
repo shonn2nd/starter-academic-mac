@@ -3,10 +3,10 @@ title: "How to Display Chinese Character in ggplot2"
 output: html_document
 draft: TRUE
 
-authors: 
+authors:
 - admin
 tags: [R, text mining, Chinese]
-categories: 
+categories:
 - R
 ---
 
@@ -29,13 +29,12 @@ library(knitr)
 
 Let's get our text data by scraping Chien-Ming Wang's page on Wikipedia.
 
-<img src="/Users/shsu/OneDrive/website/starter-academic-mac/content/post/chinese character in ggplot/wang.png" width="1426" />
-
+`[Von Frey Data 2017-12-02]("/Users/shsu/OneDrive/website/starter-academic-mac/static/images/wang.png")`
 
 ```r
-hot100page <- "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BB%BA%E6%B0%91_(%E6%A3%92%E7%90%83%E5%93%A1)"
-hot100 <- read_html(hot100page)
-hot100
+wang <- "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BB%BA%E6%B0%91_(%E6%A3%92%E7%90%83%E5%93%A1)"
+wanghtml <- read_html(wang)
+wanghtml
 ```
 
 ```
@@ -46,20 +45,20 @@ hot100
 ```
 
 ```r
-str(hot100)
+str(wanghtml)
 ```
 
 ```
 ## List of 2
-##  $ node:<externalptr> 
-##  $ doc :<externalptr> 
+##  $ node:<externalptr>
+##  $ doc :<externalptr>
 ##  - attr(*, "class")= chr [1:2] "xml_document" "xml_node"
 ```
 
 
 ```r
-body_nodes <- hot100 %>% 
- html_node("body") %>% 
+body_nodes <- wanghtml %>%
+ html_node("body") %>%
  html_children()
 body_nodes
 ```
@@ -79,9 +78,9 @@ body_nodes
 
 
 ```r
-bio <- hot100 %>% 
-  rvest::html_nodes('body') %>% 
-  xml2::xml_find_all("//div[contains(@class, 'mw-body-content mw-content-ltr')]") %>% 
+bio <- wanghtml %>%
+  rvest::html_nodes('body') %>%
+  xml2::xml_find_all("//div[contains(@class, 'mw-body-content mw-content-ltr')]") %>%
   rvest::html_text()
 
 bio_df <- data.frame(bio)
@@ -94,7 +93,7 @@ bio_df<-bio_df %>% rename(text = 1)
 ```r
 toks<-bio_df %>%
   unnest_tokens(word, text) %>% filter(!str_detect(word, "[:digit:]") &
-                                          !str_detect(word, "[a-z]")) 
+                                          !str_detect(word, "[a-z]"))
 toks%>%
   count(word, sort = TRUE) %>%
   filter(n > 60) %>%

@@ -1,7 +1,7 @@
 ---
 title: "How to Display Chinese Character in ggplot2"
 output: html_document
-draft: TRUE
+draft: FALSE
 
 authors: 
 - admin
@@ -31,26 +31,24 @@ library(knitr)
 Let's get our text data by scraping Chien-Ming Wang's page on Wikipedia.
 
 ```{r echo=F}
-img1_path <- "/Users/shsu/OneDrive/website/starter-academic-mac/content/post/chinese character in ggplot/wang.png"
-include_graphics(img1_path)
+knitr::include_graphics("/Users/shsu/OneDrive/website/starter-academic-mac/static/images/wang.png")
+```
+```{r}
+wang <- "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BB%BA%E6%B0%91_(%E6%A3%92%E7%90%83%E5%93%A1)"
+wanghtml <- read_html(wang)
+wanghtml
+str(wanghtml)
 ```
 
 ```{r}
-hot100page <- "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BB%BA%E6%B0%91_(%E6%A3%92%E7%90%83%E5%93%A1)"
-hot100 <- read_html(hot100page)
-hot100
-str(hot100)
-```
-
-```{r}
-body_nodes <- hot100 %>% 
+body_nodes <- wanghtml %>% 
  html_node("body") %>% 
  html_children()
 body_nodes
 ```
 
 ```{r}
-bio <- hot100 %>% 
+bio <- wanghtml %>% 
   rvest::html_nodes('body') %>% 
   xml2::xml_find_all("//div[contains(@class, 'mw-body-content mw-content-ltr')]") %>% 
   rvest::html_text()
