@@ -29,7 +29,7 @@ library(knitr)
 
 Let's get our text data by scraping Chien-Ming Wang's page on Wikipedia.
 
-<img src="/Users/shsu/OneDrive/website/starter-academic-mac/static/images/wang.png" width="1426" />
+![test](static/images/wang.png)
 
 ```r
 wang <- "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BB%BA%E6%B0%91_(%E6%A3%92%E7%90%83%E5%93%A1)"
