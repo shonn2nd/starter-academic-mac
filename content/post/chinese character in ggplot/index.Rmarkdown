@@ -6,7 +6,7 @@ date: "2021-09-10T00:00:00Z"
 
 authors: 
 - admin
-tags: [R, Chinese characters, ggplot]
+tags: [R, Chinese characters, ggplot2]
 categories: 
 - R
 ---
