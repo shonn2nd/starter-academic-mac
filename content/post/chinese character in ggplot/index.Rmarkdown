@@ -1,5 +1,5 @@
 ---
-title: "How to Display Chinese Character in ggplot2"
+title: "How to Display Chinese Characters in ggplot2"
 output: html_document
 draft: FALSE
 
@@ -12,7 +12,7 @@ categories:
 
 # Introduction
 
-In this post, I am going to demonstrate how to display Chinese Character in `ggplot2`
+In this post, I am going to demonstrate how to display Chinese characters in `ggplot2`
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -24,23 +24,28 @@ library(rvest)
 library(xml2)
 library(tidyverse)
 library(tidytext)
-library(png)
 library(knitr)
 ```
 
-Let's get our text data by scraping Chien-Ming Wang's page on Wikipedia.
+Let's get our text data by scraping [Chien-Ming Wang](https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BB%BA%E6%B0%91_(%E6%A3%92%E7%90%83%E5%93%A1))'s page on Wikipedia. I will not explain the process of web scraping in this post (but will do this in another post). The focus is on displaying Chinese character in `ggplot2`.
 
-```{r echo=F}
-knitr::include_graphics("/Users/shsu/OneDrive/website/starter-academic-mac/static/images/wang.png")
-```
+![](/images/wang.png)
+
+Web scraping part starts here:
+
 ```{r}
+#get access to Wang's wiki page
 wang <- "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BB%BA%E6%B0%91_(%E6%A3%92%E7%90%83%E5%93%A1)"
+#read HTML and capture the HTML code
 wanghtml <- read_html(wang)
+#display our HTML object
 wanghtml
+#compactly display the structure of the webpage
 str(wanghtml)
 ```
 
-```{r}
+
+```{r echo=FALSE, eval=FALSE}
 body_nodes <- wanghtml %>% 
  html_node("body") %>% 
  html_children()
@@ -48,37 +53,58 @@ body_nodes
 ```
 
 ```{r}
+#find all the <div> nodes in the body of the page that have a class name containing 'mw-body-content mw-content-ltr'
 bio <- wanghtml %>% 
   rvest::html_nodes('body') %>% 
   xml2::xml_find_all("//div[contains(@class, 'mw-body-content mw-content-ltr')]") %>% 
   rvest::html_text()
 
+#finally, we have our raw text data
 bio_df <- data.frame(bio)
+
+#clean the raw data a little bit
+#remove the part in the wiki that is not related to his bio
 bio_df<-gsub("臺灣出生大聯盟選手列表.*","",bio_df)
-bio_df <- data.frame(bio_df)
+bio_df<-as.data.frame(bio_df)
 bio_df<-bio_df %>% rename(text = 1)
+#remove numbers, punctuation, and English words
+bio_clean<-bio_df$text %>%
+  str_remove_all("\\n|[:digit:]|[:lower:]|[:upper:]|[:punct:]") 
+
+#now we have our clean data that is ready for analysis and visualization
+kable(bio_clean)
 ```
+There are different approaches to analyze text data in R. Here, I am using a tidy approach
 
 ```{r}
-toks<-bio_df %>%
-  unnest_tokens(word, text) %>% filter(!str_detect(word, "[:digit:]") &
-                                          !str_detect(word, "[a-z]")) 
+#tokenizing of your text data
+bio_clean<-as.data.frame(bio_clean)
+bio_clean<-bio_clean %>% rename(text = 1)
+toks<-bio_clean %>%
+  unnest_tokens(word, text) 
+
+#find out those Chinese characters that occur more than 20 times in the wiki
 toks%>%
   count(word, sort = TRUE) %>%
-  filter(n > 60) %>%
+  filter(n > 20) %>%
   mutate(word = reorder(word, n)) %>%
   ggplot(aes(n, word)) +
   geom_col() +
-  labs(y = NULL)
+  labs(y = NULL) +
+  labs(x = "Frequency")
 ```
+This is not ideal. Our plot is not able to display Chinese characters. We need `showtext_auto()` in `showtext`.
 
-```{r}
+```{r message=FALSE}
+#load showtext
 library(showtext)
+#call showtext_auto()
 showtext_auto()
 
+#run the same code for plotting the text analysis
 toks%>%
   count(word, sort = TRUE) %>%
-  filter(n > 60) %>%
+  filter(n > 20) %>%
   mutate(word = reorder(word, n)) %>%
   ggplot(aes(n, word)) +
   geom_col() +
@@ -86,18 +112,4 @@ toks%>%
   labs(x = "Frequency")
 ```
 
-```{r}
-bio_clean<-bio_df$text %>%
-  str_remove_all("\\n|[:digit:]|[:lower:]|[:upper:]|[:punct:]") %>% as.data.frame() %>% rename(text = 1)
-
-toks<-bio_clean %>% unnest_tokens(word, text, token = "ngrams", n = 2)
-
-toks%>%
-  count(word, sort = TRUE) %>%
-  filter(n > 8) %>%
-  mutate(word = reorder(word, n)) %>%
-  ggplot(aes(n, word)) +
-  geom_col() +
-  labs(y = NULL) +
-  labs(x = "Frequency")
-```
+Bingo!!
