@@ -6,7 +6,7 @@ date: "2021-09-10T00:00:00Z"
 
 authors: 
 - admin
-tags: [R, text mining, Chinese]
+tags: [R, Chinese characters, ggplot]
 categories: 
 - R
 ---
@@ -71,14 +71,18 @@ bio_df<-bio_df %>% rename(text = 1)
 #remove numbers, punctuation, and English words
 bio_clean<-bio_df$text %>%
   str_remove_all("\\n|[:digit:]|[:lower:]|[:upper:]|[:punct:]") 
-
-#now we have our clean data that is ready for analysis and visualization
-kable(bio_clean)
 ```
-There are different approaches to analyze text data in R. Here, I am using a tidy approach
+
+Now we have our clean data that is ready for analysis.
 
 ```{r}
-#tokenizing of your text data
+kable(bio_clean)
+```
+
+There are different approaches to analyze text data in R. Here, I am using a tidy approach.
+
+```{r}
+#tokenize your text data
 bio_clean<-as.data.frame(bio_clean)
 bio_clean<-bio_clean %>% rename(text = 1)
 toks<-bio_clean %>%
@@ -99,6 +103,7 @@ This is not ideal. Our plot is not able to display Chinese characters. We need `
 ```{r message=FALSE}
 #load showtext
 library(showtext)
+
 #call showtext_auto()
 showtext_auto()
 
