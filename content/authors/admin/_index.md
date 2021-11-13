@@ -7,8 +7,7 @@ bio: Assistant Professor at Sam Houston State University
 interests: 
   - Psychological process of teaching and learning in technology-enhanced environments
   - Equity in STEM
-  - Data science
-  - R
+  - R & Data science
 education:
   courses:
   - course: PhD in Learning Technologies
