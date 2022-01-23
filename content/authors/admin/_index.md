@@ -5,9 +5,9 @@ role: Assistant Professor
 output: pdf_document
 bio: Assistant Professor at Sam Houston State University
 interests: 
-  - Psychological process of teaching and learning in technology-enhanced environments
+  - Psychological processes of teaching and learning in technology-enhanced environments
   - Equity in STEM
-  - R & Data science
+  - R
 education:
   courses:
   - course: PhD in Learning Technologies
