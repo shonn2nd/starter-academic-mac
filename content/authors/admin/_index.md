@@ -20,6 +20,9 @@ education:
   - course: BA in English
     institution: Wenzao Ursuline University of Languages (Taiwan)
     year: 2006
+  - course: AMS in Business Administration
+    institution: National Taipei University of Business (Taiwan)
+    year: 2004
 social:
 - icon: envelope
   icon_pack: fas
@@ -49,6 +52,6 @@ organizations:
   url: https://www.shsu.edu/
 ---
 
-Dr. Shonn Sheng-Lun Cheng received his doctoral degree in learning technologies at The Ohio State University in 2019. Then, he pursued one-year postdoctoral training in quantitative methodology at Virginia Commonwealth University. Currently, Dr. Cheng is an assistant professor of instructional systems design and technology at Sam Houston State University. 
+Dr. Shonn Sheng-Lun Cheng received his doctoral degree in learning technologies at The Ohio State University in 2019. Then, he pursued one-year postdoctoral training in quantitative methodology at Virginia Commonwealth University. Currently, he is an assistant professor of instructional systems design and technology at Sam Houston State University. Dr. Cheng used to teach English in cram school in Taiwan for three years. 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv.pdf" "newtab" >}}Curriculum Vitae{{< /staticref >}}.
