@@ -52,6 +52,6 @@ organizations:
   url: https://www.shsu.edu/
 ---
 
-Dr. Shonn Sheng-Lun Cheng received his doctoral degree in learning technologies at The Ohio State University in 2019. Then, he pursued one-year postdoctoral training in quantitative methodology at Virginia Commonwealth University. Currently, he is an Assistant pPofessor of Instructional Systems Design and Technology in the Department of Library Science and Technology at Sam Houston State University. Dr. Cheng used to teach English in cram school in Taiwan for three years. His scholarship focuses on teaching with technology.
+Dr. Shonn Sheng-Lun Cheng received his doctoral degree in learning technologies at The Ohio State University in 2019. Then, he pursued one-year postdoctoral training in quantitative methodology at Virginia Commonwealth University. Currently, he is an Assistant Pofessor of Instructional Systems Design and Technology in the Department of Library Science and Technology at Sam Houston State University. Dr. Cheng used to teach English in cram school in Taiwan for three years. His scholarship focuses on teaching with technology.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv.pdf" "newtab" >}}Curriculum Vitae{{< /staticref >}}.
