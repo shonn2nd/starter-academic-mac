@@ -9,7 +9,9 @@ interests:
 
     - teaching with technology  
     
-    - procrastination and delay
+    - academic procrastination  
+      
+    - academic delay
 education:
   courses:
   - course: PhD in Learning Technologies
