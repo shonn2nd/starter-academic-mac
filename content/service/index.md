@@ -13,8 +13,6 @@ header:
   caption: ""
   image: ""
 ---
-### __Editorial Board__  
-* Frontiers in Education (2021-present)
 ### __Ad Hoc Journal Reviewers__  
 * Asia Pacific Education Review
 * Assessment for Effective Intervention
