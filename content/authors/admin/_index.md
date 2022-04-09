@@ -5,7 +5,11 @@ role: Assistant Professor
 output: pdf_document
 bio: Assistant Professor at Sam Houston State University
 interests: 
-  - psychological aspects of learning technologies
+  - psychological aspects of learning technologies  
+    - teaching with technology
+    - online education
+  - psychological aspects of computer science education
+  - psychological aspects of vocational education
 education:
   courses:
   - course: PhD in Learning Technologies
