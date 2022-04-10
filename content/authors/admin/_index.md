@@ -7,14 +7,16 @@ bio: Assistant Professor at Sam Houston State University
 interests: 
   - psychology of  
 
-    - learning technologies  
+    - teacher education  
 
+    - online education  
+      
     - computer science education  
 
     - vocational education  
 
     - bilingual education  
-    
+
 education:
   courses:
   - course: PhD in Learning Technologies
