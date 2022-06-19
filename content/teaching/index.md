@@ -14,6 +14,7 @@ header:
   image: ""
 ---
 ## __Sam Houston State University__  
+* ISDT 5337: Designing Instructional Materials for the Web (master's; 100% online) 
 * ISDT 7336: Instructional Design Assessment (doctoral; 100% online)   
 * ISDT 7325: Technology Sustainability (doctoral; 100% online) 
 * ISDT 7335: Management Application Analysis (doctoral; 100% online)  
