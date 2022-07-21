@@ -19,10 +19,10 @@ header:
 * Computers & Education
 * Distance Education
 * Education and Information Technologies
-* Learning and Individual Differences
 * Journal of Computer Assisted Learning
 * Journal of Computers in Education
 * Journal of Research on Technology in Education
+* Learning and Individual Differences
 * Teaching and Teacher Education              
 * The Internet and Higher Education
 ### __International/National Academic Association__  
