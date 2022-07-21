@@ -19,6 +19,7 @@ header:
 * Computers & Education
 * Distance Education
 * Education and Information Technologies
+* Learning and Individual Differences
 * Journal of Computer Assisted Learning
 * Journal of Computers in Education
 * Journal of Research on Technology in Education
