@@ -1,5 +1,5 @@
 ---
-title: "Shonn Sheng-Lun Cheng"
+title: "Shonn Cheng"
 superuser: yes
 role: Assistant Professor
 output: pdf_document
