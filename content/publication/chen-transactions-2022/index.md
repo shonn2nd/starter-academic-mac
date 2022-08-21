@@ -59,6 +59,6 @@ abstract: 'This study aimed to further the understanding of transactional relati
   problem behaviors. The implications for research, prevention, and early intervention
   regarding the progression of academic and behavioral problems are discussed.'
 publication: '*International Journal of Environmental Research and Public Health*'
-url_pdf: ijerph-19-09583.pdf
+url_pdf: https://www.mdpi.com/1660-4601/19/15/9583/pdf?version=1659600652
 doi: https://doi.org/10.3390/ijerph19159583
 ---
