@@ -12,7 +12,7 @@ authors:
 tags: []
 categories: []
 date: '2022-01-01'
-lastmod: 2022-01-23T12:25:51-06:00
+lastmod: 2022-08-20T23:32:34-05:00
 featured: false
 draft: false
 
@@ -30,7 +30,7 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2022-01-23T18:25:50.816408Z'
+publishDate: '2022-08-21T04:32:34.609789Z'
 publication_types:
 - '2'
 abstract: The purpose of this study was to examine how pre-service teachers’ competence

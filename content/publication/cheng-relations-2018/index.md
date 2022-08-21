@@ -12,7 +12,7 @@ tags:
 - '"teachered"'
 categories: []
 date: '2018-01-01'
-lastmod: 2021-07-21T20:56:14-05:00
+lastmod: 2022-08-20T23:32:32-05:00
 featured: false
 draft: false
 
@@ -30,7 +30,7 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2021-07-22T01:56:13.809622Z'
+publishDate: '2022-08-21T04:32:32.126650Z'
 publication_types:
 - '2'
 abstract: The purpose of this study is to examine the relations among teacher value
@@ -44,6 +44,5 @@ abstract: The purpose of this study is to examine the relations among teacher va
   beliefs around technology integration is discussed. © 2018 Elsevier Ltd. All rights
   reserved.
 publication: '*Teaching and Teacher Education*'
-url_pdf: https://www.sciencedirect.com/science/article/abs/pii/S0742051X17319522
 doi: 10.1016/j.tate.2018.04.014
 ---

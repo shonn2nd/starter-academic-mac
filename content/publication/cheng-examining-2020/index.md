@@ -12,7 +12,7 @@ authors:
 tags: []
 categories: []
 date: '2020-11-01'
-lastmod: 2021-07-21T20:56:16-05:00
+lastmod: 2022-08-20T23:32:33-05:00
 featured: false
 draft: false
 
@@ -30,7 +30,7 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2021-07-22T01:56:15.950849Z'
+publishDate: '2022-08-21T04:32:33.539125Z'
 publication_types:
 - '2'
 abstract: The purpose of this study is to examine the relationship between competence

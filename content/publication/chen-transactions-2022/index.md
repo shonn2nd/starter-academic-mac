@@ -16,7 +16,7 @@ authors:
 tags: []
 categories: []
 date: '2022-01-01'
-lastmod: 2022-08-20T23:23:36-05:00
+lastmod: 2022-08-20T23:32:35-05:00
 featured: false
 draft: false
 
@@ -34,7 +34,7 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2022-08-21T04:23:36.247368Z'
+publishDate: '2022-08-21T04:32:35.226924Z'
 publication_types:
 - '2'
 abstract: 'This study aimed to further the understanding of transactional relationships

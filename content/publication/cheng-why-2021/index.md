@@ -14,7 +14,7 @@ tags:
 - '"online"'
 categories: []
 date: '2021-06-01'
-lastmod: 2021-07-21T20:56:16-05:00
+lastmod: 2022-08-20T23:32:34-05:00
 featured: false
 draft: false
 
@@ -32,7 +32,7 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2021-07-22T01:56:16.539557Z'
+publishDate: '2022-08-21T04:32:34.167375Z'
 publication_types:
 - '2'
 abstract: The purpose of this study was to examine why college students procrastinated

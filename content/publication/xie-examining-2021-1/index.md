@@ -13,7 +13,7 @@ authors:
 tags: []
 categories: []
 date: '2021-08-01'
-lastmod: 2021-08-23T01:30:52-05:00
+lastmod: 2022-08-20T23:32:34-05:00
 featured: false
 draft: false
 
@@ -31,7 +31,7 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2021-08-23T06:30:42.694651Z'
+publishDate: '2022-08-21T04:32:34.404056Z'
 publication_types:
 - '2'
 abstract: This study examined changes in teachers’ perceptions of external barriers,
