@@ -8,7 +8,7 @@ interests:
   - Pasteur's Quadrant
 education:
   courses:
-  - course: PhD in Learning Technologies
+  - course: PhD in Educational Studies
     institution: The Ohio State University (USA)
     year: 2019
   - course: MA in Quantitative Research, Evaluation and Measurement (QREM)
@@ -52,6 +52,6 @@ organizations:
   url: https://www.shsu.edu/
 ---
 
-Dr. Shonn Cheng received his doctoral degree in learning technologies at The Ohio State University in 2019. Then, he pursued one-year postdoctoral training in quantitative methodology at Virginia Commonwealth University. Currently, Dr. Cheng is an Assistant Pofessor of Instructional Systems Design and Technology in the Department of Library Science and Technology at Sam Houston State University.
+Dr. Shonn Cheng received his doctoral degree in educational studies at The Ohio State University in 2019. Then, he pursued one-year postdoctoral training in quantitative methodology at Virginia Commonwealth University. Currently, Dr. Cheng is an Assistant Pofessor of Instructional Systems Design and Technology in the Department of Library Science and Technology at Sam Houston State University.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv.pdf" "newtab" >}}Curriculum Vitae{{< /staticref >}}.
