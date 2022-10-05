@@ -19,6 +19,7 @@ header:
 * Computers & Education
 * Distance Education
 * Education and Information Technologies
+* Educational Technology & Society (ET&S)
 * Journal of Computer Assisted Learning
 * Journal of Computers in Education
 * Journal of Research on Technology in Education
