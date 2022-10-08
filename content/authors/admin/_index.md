@@ -32,7 +32,7 @@ social:
   link: https://twitter.com/shonn2nd
 - icon: linkedin
   icon_pack: fab
-  link: https://www.linkedin.com/in/shonn-sheng-lun-cheng-2220b81b2/
+  link: https://www.linkedin.com/in/shonnslc/
 - icon: graduation-cap
   icon_pack: fas
   link: https://scholar.google.com/citations?user=A_y6nEsAAAAJ&hl=en&oi=ao
