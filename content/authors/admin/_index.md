@@ -21,7 +21,7 @@ education:
     institution: Wenzao Ursuline University of Languages (Taiwan)
     year: 2006
   - course: AMS in Business Administration
-    institution: National Taipei University of Business
+    institution: National Taipei University of Business (Earth)
     year: 2004
 social:
 - icon: envelope
