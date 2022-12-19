@@ -26,7 +26,7 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: mailto:scheng@shsu.edu
+  link: mailto:cheng.850@osu.edu
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/shonn2nd
@@ -38,7 +38,7 @@ social:
   link: https://scholar.google.com/citations?user=A_y6nEsAAAAJ&hl=en&oi=ao
 - icon: researchgate
   icon_pack: ai
-  link: https://www.researchgate.net/profile/Shonn-Sheng-Lun-Cheng
+  link: https://www.researchgate.net/profile/Shonn-Cheng
 - icon: orcid
   icon_pack: ai
   link: https://orcid.org/0000-0003-2993-2031
