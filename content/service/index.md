@@ -34,3 +34,4 @@ header:
 ### __Dissertation Chair/Committee__  
 ## Sam Houston State University
 * Joseph Guidry (co-chair; 2020-2021; pass)
+* Ngoc Van P. Bui (member; 2021-2022; pass)
