@@ -3,18 +3,18 @@ title: "Shonn Cheng"
 superuser: yes
 role: Assistant Professor
 output: pdf_document
-bio: Assistant Professor at Sam Houston State University
+bio: Assistant Professor at National Taipei University of Technology
 interests: 
-  - Pasteur's Quadrant
+  - the intersection between psychology, technology, and human resource development
 education:
   courses:
   - course: PhD in Educational Studies
     institution: The Ohio State University (USA)
     year: 2019
-  - course: MA in Quantitative Research, Evaluation and Measurement (QREM)
+  - course: MA in Educational Studies
     institution: The Ohio State University (USA)
     year: 2018
-  - course: MA in Curriculum & Instruction
+  - course: MA in Education
     institution: New Mexico State University (USA)
     year: 2013
   - course: BA in English
@@ -26,7 +26,7 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: mailto:cheng.850@osu.edu
+  link: mailto:scheng@ntut.edu.tw
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/shonn2nd
@@ -48,10 +48,10 @@ social:
 email: ''
 highlight_name: no
 organizations:
-- name: Sam Houston State University
-  url: https://www.shsu.edu/
+- name: National Taipei University of Technology
+  url: https://www.ntut.edu.tw/
 ---
 
-Dr. Shonn Cheng received his doctoral degree in educational studies at The Ohio State University in 2019. Then, he pursued one-year postdoctoral training in quantitative methodology at Virginia Commonwealth University. Currently, Dr. Cheng is an Assistant Pofessor of Instructional Systems Design and Technology in the Department of Library Science and Technology at Sam Houston State University.
+Dr. Shonn Cheng received his doctoral degree in Educational Studies at The Ohio State University in summer 2019. Thereafter, he pursued one-year postdoctoral training at Virginia Commonwealth University. During 2020-2022, he worked as an assistant professor in the Department of Instructional Systems Design and Technology at Sam Houston State University. Currently, Dr. Cheng is an assistant pofessor in the Graduate Institute of Technological and Vocational Education at National Taipei University of Technology.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv.pdf" "newtab" >}}Curriculum Vitae{{< /staticref >}}.
