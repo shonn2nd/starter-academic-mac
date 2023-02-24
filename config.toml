@@ -1,0 +1,2 @@
+[security.funcs]
+getenv = ['^HUGO_', '^CI$','^WC_POST_CSS$']
