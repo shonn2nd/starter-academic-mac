@@ -52,6 +52,6 @@ organizations:
   url: https://www-en.ntut.edu.tw/
 ---
 
-Dr. Shonn Cheng received his doctoral degree in Educational Studies at The Ohio State University in summer 2019. Thereafter, he pursued one-year postdoctoral training at Virginia Commonwealth University. During 2020-2022, he worked as an assistant professor in the Department of Instructional Systems Design and Technology at Sam Houston State University. Currently, Dr. Cheng is an assistant pofessor in the Graduate Institute of Technological and Vocational Education at National Taipei University of Technology. Dr. Cheng is not sure what his research interest is. He does not have any research labs; therefore, there is no way you can join his lab.
+Dr. Shonn Cheng received his doctoral degree in Educational Studies at The Ohio State University in summer 2019. Thereafter, he pursued one-year postdoctoral training at Virginia Commonwealth University. During 2020-2022, he worked as an assistant professor in the Department of Instructional Systems Design and Technology at Sam Houston State University. Currently, Dr. Cheng is an assistant pofessor in the Graduate Institute of Technological and Vocational Education at National Taipei University of Technology. Dr. Cheng is not sure what his research interest is. He does not have any research labs, so please excuse him for not inviting you to join his lab.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv.pdf" "newtab" >}}Curriculum Vitae{{< /staticref >}}.
