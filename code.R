@@ -1,2 +1,4 @@
 library(blogdown)
-blogdown:::serve_site()
+blogdown::install_hugo()
+blogdown::serve_site()
+blogdown::build_site()
