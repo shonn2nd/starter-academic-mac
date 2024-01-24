@@ -1,3 +1,9 @@
+---
+title: "My R Markdown Document"
+date: "2024-01-24"
+---
+
+
 ## R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax

@@ -1,8 +1,5 @@
 ---
 title: "My R Markdown Document"
-output:
-  md_document: default
-  html_document: default
 date: "2024-01-24"
 ---
 
