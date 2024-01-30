@@ -5,9 +5,9 @@ role: Assistant Professor
 output: pdf_document
 bio: Assistant Professor at National Taipei University of Technology
 interests: 
-  - work and achievement motivation
-  - psychology of training with technology
-  - psychology of expertise in teaching with technology
+  - Work and Achievement Motivation
+  - Psychology of Training with Technology
+  - Psychology of Expertise in Teaching with Technology
 education:
   courses:
   - course: PhD in Educational Studies
