@@ -1,0 +1,48 @@
+---
+title: "Create Dummy Variables"
+output: md_document
+date: "2024-02-15"
+---
+
+## Create Dummy Variables
+
+# Load Packages
+
+```{r message=FALSE, warning=FALSE}
+library(fastDummies)
+library(tidyverse)
+library(psych)
+```
+
+# Create a DataSet
+
+```{r}
+# Create a vector of race scores
+race <- c("White", "Black", "Asian", "Hispanic", "Other")
+
+# Generate random income values for each race (100 cases)
+set.seed(123) # for reproducibility
+income <- round(runif(100, min = 20000, max = 100000), digits = 2)
+
+# Repeat each race 20 times to get 100 cases
+race <- rep(race, each = 20)
+
+# Combine race and income into a data frame
+data <- data.frame(race, income)
+
+# Print the first few rows of the dataset
+print(head(data))
+```
+
+# Create Dummy Variables
+
+```{r}
+data<-data |> dummy_cols(select_columns = "race")
+```
+
+# Regress Race on Income (African Americans as the Reference Category)
+
+```{r}
+fit<-lm(income ~ race_Asian + race_Hispanic + race_Other + race_White, data=data)
+summary(fit)
+```
