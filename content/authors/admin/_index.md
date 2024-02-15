@@ -1,9 +1,9 @@
 ---
 title: "Shonn Cheng"
 superuser: yes
-role: Assistant Professor
+role: Assistant Professor at National Taipei University of Technology
 output: pdf_document
-bio: Assistant Professor at National Taipei University of Technology
+bio:
 interests: 
   - Work and Achievement Motivation
   - Psychology of Training with Technology
