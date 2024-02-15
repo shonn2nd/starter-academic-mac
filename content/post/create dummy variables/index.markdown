@@ -1,3 +1,16 @@
+---
+title: "Create Dummy Variables"
+output: html_document
+# Date published
+date: "2024-02-15"
+
+authors: 
+- admin
+tags: [R, transform]
+categories: 
+- R
+---
+
 # Create Dummy Variables
 
 ## Load Packages
