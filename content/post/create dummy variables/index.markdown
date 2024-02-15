@@ -1,12 +1,12 @@
-## Create Dummy Variables
+# Create Dummy Variables
 
-# Load Packages
+## Load Packages
 
     library(fastDummies)
     library(tidyverse)
     library(psych)
 
-# Create a DataSet
+## Create a DataSet
 
     # Create a vector of race scores
     race <- c("White", "Black", "Asian", "Hispanic", "Other")
@@ -32,11 +32,11 @@
     ## 5 White 95237.38
     ## 6 White 23644.52
 
-# Create Dummy Variables
+## Create Dummy Variables
 
     data<-data |> dummy_cols(select_columns = "race")
 
-# Regress Race on Income (African Americans as the Reference Category)
+## Regress Race on Income (African Americans as the Reference Category)
 
     fit<-lm(income ~ race_Asian + race_Hispanic + race_Other + race_White, data=data)
     summary(fit)

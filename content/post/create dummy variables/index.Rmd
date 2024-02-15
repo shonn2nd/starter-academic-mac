@@ -1,12 +1,18 @@
 ---
 title: "Create Dummy Variables"
 output: md_document
+# Date published
 date: "2024-02-15"
+authors: 
+- admin
+tags: [R, dummy variables]
+categories: 
+- R
 ---
 
-## Create Dummy Variables
+# Create Dummy Variables
 
-# Load Packages
+## Load Packages
 
 ```{r message=FALSE, warning=FALSE}
 library(fastDummies)
@@ -14,7 +20,7 @@ library(tidyverse)
 library(psych)
 ```
 
-# Create a DataSet
+## Create a DataSet
 
 ```{r}
 # Create a vector of race scores
@@ -34,13 +40,13 @@ data <- data.frame(race, income)
 print(head(data))
 ```
 
-# Create Dummy Variables
+## Create Dummy Variables
 
 ```{r}
 data<-data |> dummy_cols(select_columns = "race")
 ```
 
-# Regress Race on Income (African Americans as the Reference Category)
+## Regress Race on Income (African Americans as the Reference Category)
 
 ```{r}
 fit<-lm(income ~ race_Asian + race_Hispanic + race_Other + race_White, data=data)
