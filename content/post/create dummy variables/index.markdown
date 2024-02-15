@@ -11,8 +11,6 @@ categories:
 - R
 ---
 
-# Create Dummy Variables
-
 ## Load Packages
 
     library(fastDummies)
