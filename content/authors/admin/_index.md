@@ -7,7 +7,7 @@ bio:
 interests: 
   - Work and Achievement Motivation
   - Psychology of Training with Technology
-  - Psychology of Expertise in Teaching with Technology
+  - Psychology of Expertise
 education:
   courses:
   - course: PhD in Educational Studies
@@ -54,6 +54,6 @@ organizations:
   url: https://www-en.ntut.edu.tw/
 ---
 
-Dr. Shonn Cheng received his Ph.D. in Educational Studies at The Ohio State University (USA) in summer 2019. Thereafter, he pursued one-year postdoctoral training at Virginia Commonwealth University (USA). During 2020-2022, he worked as an Assistant Professor in the Department of Instructional Systems Design and Technology at Sam Houston State University (USA). Currently, Dr. Cheng is an Assistant Pofessor in the Graduate Institute of Technological and Vocational Education at National Taipei University of Technology (Taiwan) and the Director of the <a href="https://academic.ntut.edu.tw/5417/">Psychology of Training with Technology (PTT) Lab</a> . Dr. Cheng's research interests encompass three areas: work and achievement motivation, psychology of training with technology, and psychology of expertise in teaching with technology.
+Dr. Shonn Cheng received his Ph.D. in Educational Studies at The Ohio State University (USA) in summer 2019. Thereafter, he pursued one-year postdoctoral training at Virginia Commonwealth University (USA). During 2020-2022, he worked as an Assistant Professor in the Department of Instructional Systems Design and Technology at Sam Houston State University (USA). Currently, Dr. Cheng is an Assistant Pofessor in the Graduate Institute of Technological and Vocational Education at National Taipei University of Technology (Taiwan) and the Director of the <a href="https://academic.ntut.edu.tw/5417/">Psychology of Training with Technology (PTT) Lab</a> . Dr. Cheng's research interests encompass three areas: work and achievement motivation, psychology of training with technology, and psychology of expertise.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv.pdf" "newtab" >}}Curriculum Vitae{{< /staticref >}}.
