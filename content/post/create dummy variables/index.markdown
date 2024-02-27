@@ -47,7 +47,7 @@ categories:
 
     data<-data |> dummy_cols(select_columns = "race")
 
-## Regress Race on Income (African Americans as the Reference Category)
+## Regress Income on Race (African Americans as the Reference Category)
 
     fit<-lm(income ~ race_Asian + race_Hispanic + race_Other + race_White, data=data)
     summary(fit)
