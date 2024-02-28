@@ -45,7 +45,7 @@ categories:
 
 ## Create Dummy Variables
 
-    data<-data |> dummy_cols(select_columns = "race")
+    data<-data %>% dummy_cols(select_columns = "race")
 
 ## Regress Income on Race (African Americans as the Reference Category)
 
