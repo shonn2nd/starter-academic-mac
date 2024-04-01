@@ -17,7 +17,7 @@ main:
     url: "meta/"
     identifier: meta
     weight: 90 
-  - name: R U Serious
+  - name: Project
     parent: meta
     url: "project/"
     weight: 10
