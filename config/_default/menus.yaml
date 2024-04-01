@@ -18,7 +18,7 @@ main:
     weight: 90 
   - name: R U Serious
     parent: META
-    url: meta/example/
+    url: "meta/example/"
     weight: 10
 
 # Link to a PDF of your resume/CV from the menu.
