@@ -14,7 +14,6 @@ header:
   caption: ""
   image: ""
 ---
-
 ## __Sam Houston State University__  
 * ISDT 5319: Critical Analysis of Instructional Software (master's; 100% online) 
 * ISDT 5337: Designing Instructional Materials for the Web (master's; 100% online) 
