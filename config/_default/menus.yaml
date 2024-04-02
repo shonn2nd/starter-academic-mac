@@ -7,10 +7,10 @@ main:
   - name: Home
     url: '#about'
     weight: 10
-  - name: Posts
+  - name: Post
     url: '#posts'
     weight: 70
-  - name: Publications
+  - name: Publication
     url: '#publications'
     weight: 50
   - name: META
