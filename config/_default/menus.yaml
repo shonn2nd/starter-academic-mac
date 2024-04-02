@@ -25,6 +25,10 @@ main:
     parent: meta
     url: "project/"
     weight: 2
+  - name: Event
+    parent: meta
+    url: "event/"
+    weight: 3
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below.
