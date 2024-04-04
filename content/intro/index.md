@@ -22,7 +22,7 @@ external_link: ""
 
 image:
   caption:
-  focal_point: Smart
+  focal_point:
 
 links:
 - icon: 
