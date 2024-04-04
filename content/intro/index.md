@@ -25,11 +25,11 @@ image:
   focal_point: Smart
 
 links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/georgecushen
-url_code: "meta"
+- icon: 
+  icon_pack:
+  name:
+  url: 
+url_code: ""
 url_pdf: ""
 url_slides: ""
 url_video: ""
@@ -39,7 +39,7 @@ url_video: ""
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
 #   Otherwise, set `slides = ""`.
-slides: example
+slides:
 ---
 
 Welcome to META Lab: Your Gateway to Discovery in Motivation, Expertise, Training, and Analysis
