@@ -1,5 +1,5 @@
 ---
-title: Under Construction
+title: META
 summary: Here we describe how to add a page to your site.
 date: "2018-06-28T00:00:00Z"
 
@@ -14,7 +14,7 @@ header:
   image: ""
 
 tags:
-- Deep Learning
+- META
 date: "2016-04-27T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
