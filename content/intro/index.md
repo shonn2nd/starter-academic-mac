@@ -28,7 +28,7 @@ links:
 - icon: 
   icon_pack:
   name:
-  url: google.com
+  url:
 url_code: ""
 url_pdf: ""
 url_slides: ""
