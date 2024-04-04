@@ -44,7 +44,7 @@ slides: example
 
 Welcome to META Lab: A Nexus of Motivation, Expertise, Training, and Analysis
 
-At META Lab, we delve into the intricate world of work and achievement motivation, exploring the drives that propel individuals toward success. Our quest for knowledge extends to the realm of expertise, where we examine the psychological facets that sculpt a novice into a master. Embracing the transformative power of technology, we also investigate how it can amplify training effectiveness, preparing individuals not just to meet but to exceed the demands of their professions.
+At META Lab, we delve into the intricate world of work and achievement motivation, exploring the drives that propel individuals toward success. Our quest for knowledge extends to the realm of expertise, where we examine the psychological facets that sculpt a novice into an expert. Embracing the transformative power of technology, we also investigate how it can amplify training effectiveness, preparing individuals not just to meet but to exceed the demands of their professions.
 
 Our analytical appetite is omnivorous, embracing quantitative, qualitative, and mixed methods to forge a comprehensive understanding of motivation, expertise, and training. We are on the lookout for inquisitive minds eager to dissect and comprehend these domains and wield analytical tools with precision and creativity.
 
