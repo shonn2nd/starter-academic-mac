@@ -4,7 +4,7 @@ title: Regression with Categorical Predictors
 event: META Weekly Meeting
 event_url:
 
-location: TEAM Virtual Meeting Room
+location: TEAM Meeting Room
 address:
   street:
   city:
@@ -57,7 +57,6 @@ slides: example
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects:
--
 ---
 
 {{% callout note %}}
