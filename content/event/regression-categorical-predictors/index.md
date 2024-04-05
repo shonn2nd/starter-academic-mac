@@ -37,7 +37,7 @@ image:
 links:
 - icon:
   icon_pack:
-  name:
+  name: Home Page
   url:
 url_code: "uploads/regression-categorical-predictors.R"
 url_pdf: ""
