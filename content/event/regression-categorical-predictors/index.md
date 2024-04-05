@@ -1,5 +1,5 @@
 ---
-title: Example Talk
+title: Regression with Categorical Predictors
 
 event: Wowchemy Conference
 event_url: https://example.org
