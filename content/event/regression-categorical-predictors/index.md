@@ -39,7 +39,7 @@ links:
   icon_pack:
   name:
   url:
-url_code: "uploads/resume.pdf"
+url_code: "uploads/regression-categorical-predictors.R"
 url_pdf: ""
 url_slides: ""
 url_video: ""
