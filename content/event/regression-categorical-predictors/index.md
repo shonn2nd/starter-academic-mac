@@ -38,7 +38,7 @@ links:
 - icon:
   icon_pack:
   name:
-  url:
+  url: uploads/resume.pdf
 url_code: ""
 url_pdf: ""
 url_slides: ""
