@@ -1,19 +1,19 @@
 ---
 title: Regression with Categorical Predictors
 
-event: Wowchemy Conference
-event_url: https://example.org
+event: META Weekly Meeting
+event_url:
 
-location: Wowchemy HQ
+location: TEAM Virtual Meeting Room
 address:
-  street: 450 Serra Mall
-  city: Stanford
-  region: CA
-  postcode: '94305'
-  country: United States
+  street:
+  city:
+  region:
+  postcode:
+  country:
 
-summary: We learned how to deal with categorical predictors in regression.
-abstract:
+summary: We learned how to deal with categorical predictors in regression using R.
+abstract: We learned how to deal with categorical predictors in regression using R.
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -35,10 +35,10 @@ image:
   focal_point: Right
 
 links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/georgecushen
+- icon:
+  icon_pack:
+  name:
+  url:
 url_code: ""
 url_pdf: ""
 url_slides: ""
