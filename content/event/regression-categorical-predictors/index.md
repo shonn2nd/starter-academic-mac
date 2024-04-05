@@ -17,7 +17,7 @@ abstract: We learned how to deal with categorical predictors in regression using
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2024-03-30T05:00:00Z"
+date: "2024-03-30T13:00:00Z"
 date_end:
 all_day: false
 
