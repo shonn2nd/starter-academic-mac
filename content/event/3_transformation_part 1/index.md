@@ -39,7 +39,7 @@ links:
   icon_pack:
   name: Home Page
   url:
-url_code: "uploads/3_transformation"
+url_code: "uploads/3_transformation.R"
 url_pdf: ""
 url_slides: ""
 url_video: ""
