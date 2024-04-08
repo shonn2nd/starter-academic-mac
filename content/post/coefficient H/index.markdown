@@ -1,3 +1,16 @@
+---
+title: "Coefficient H"
+output: html_document
+# Date published
+date: "2024-04-08"
+
+authors: 
+- admin
+tags: [R]
+categories: 
+- R
+---
+
 Please check McNeish ([2018](#ref-mcneish2018)) for details. Here, I am
 using the NSCH dataset as an example.
 
