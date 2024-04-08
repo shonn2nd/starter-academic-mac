@@ -14,22 +14,20 @@ categories:
 Please check McNeish ([2018](#ref-mcneish2018)) for details. Here, I am
 using the NSCH dataset as an example.
 
-    # load packages
+    #load packages
     library(haven)
     library(tidyverse)
     library(userfriendlyscience)
 
-    # import data
+    #import data
     data<-read_sav("nsch.sav")
 
-    # import data
-
-    # clear the current graphics frame and get ready for the next plot.
+    #clear the current graphics frame and get ready for the next plot
     plot.new()
 
 ![](index_files/figure-markdown_strict/unnamed-chunk-3-1.png)
-    
-    # the answer
+
+    #the answer
     data %>% 
       filter(across(c(RECOGBEGIN, CLEAREXP, WRITENAME, RECSHAPES), ~ . < 6)) %>% 
       select(RECOGBEGIN, CLEAREXP, WRITENAME, RECSHAPES) %>% 
