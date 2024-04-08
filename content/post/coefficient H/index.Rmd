@@ -1,0 +1,30 @@
+---
+title: "Coefficient H"
+output: md_document
+date: "2024-04-08"
+bibliography: references.bib
+csl: https://www.zotero.org/styles/apa
+link-citations: true
+---
+
+Please check @mcneish2018 for details. Here, I am using the NSCH dataset as an example.
+
+```{r message=FALSE, warning=FALSE}
+library(haven)
+library(tidyverse)
+library(userfriendlyscience)
+```
+
+```{r message=FALSE, warning=FALSE}
+data<-read_sav("nsch.sav")
+```
+
+```{r message=FALSE, warning=FALSE}
+plot.new()
+data %>% 
+  filter(across(c(RECOGBEGIN, CLEAREXP, WRITENAME, RECSHAPES), ~ . < 6)) %>% 
+  select(RECOGBEGIN, CLEAREXP, WRITENAME, RECSHAPES) %>% 
+  scaleStructure()
+```
+
+**References**
