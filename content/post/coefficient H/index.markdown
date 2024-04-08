@@ -27,8 +27,8 @@ using the NSCH dataset as an example.
 
 ![](index_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
-    #the answer
-    
+    #coefficient H
+
     data %>% 
       filter(across(c(RECOGBEGIN, CLEAREXP, WRITENAME, RECSHAPES), ~ . < 6)) %>% 
       select(RECOGBEGIN, CLEAREXP, WRITENAME, RECSHAPES) %>% 
