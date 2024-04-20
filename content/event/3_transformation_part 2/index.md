@@ -1,5 +1,5 @@
 ---
-title: Introduction to Data Transformation (filter & arrange)
+title: Introduction to Data Transformation (distinct & count)
 
 event: R U Serious
 event_url:
@@ -13,11 +13,11 @@ address:
   country:
 
 summary: We learned how to transform data using R.
-abstract: This is our first "R U Serious" event. Today, we learned how to transform data using "filter" and "arrange" functions in R.
+abstract: This is our second "R U Serious" event. Today, we learned how to transform data using "distinct" and "count" functions in R.
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2024-04-06T13:00:00Z"
+date: "2024-04-20T16:00:00Z"
 date_end:
 all_day: false
 
