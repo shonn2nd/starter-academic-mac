@@ -5,7 +5,7 @@ role: Assistant Professor at National Taipei University of Technology
 output: pdf_document
 bio:
 interests: 
-  - unknown
+  - stinky tofu
 education:
   courses:
   - course: PhD in Educational Studies
