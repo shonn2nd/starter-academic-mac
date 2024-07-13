@@ -31,7 +31,7 @@ I am using the “mpg” dataset included in the ggplot2 package.
 ![](index_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
 This plot is ok, but how about arranging the order of trans by
-frequency? We can use `reorder`.
+frequency? We can use reorder.
 
     mpg %>% 
       group_by(trans) %>% 
