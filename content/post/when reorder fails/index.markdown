@@ -1,17 +1,4 @@
----
-title: "When reorder Fails"
-output: html_document
-# Date published
-date: "2024-07-13"
-
-authors: 
-- admin
-tags: [R]
-categories: 
-- R
----
-
-I am using the “mpg” dataset included in the ggplot2 package.
+I am using the *mpg* dataset included in the **ggplot2** package.
 
     #load packages
     library(tidyverse)
@@ -56,7 +43,7 @@ frequency? We can use reorder.
 ![](index_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
 Ok, this is what we want. Let’s work with a more complicated example. We
-want the relation between the distribution of trans varied by drv.
+want the distribution of trans varied by drv.
 
     mpg %>% 
       group_by(drv, trans) %>% 
