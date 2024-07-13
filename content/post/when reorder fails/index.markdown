@@ -1,3 +1,16 @@
+---
+title: "When reorder Fails"
+output: html_document
+# Date published
+date: "2024-07-13"
+
+authors: 
+- admin
+tags: [R]
+categories: 
+- R
+---
+
 I am using the *mpg* dataset included in the **ggplot2** package.
 
     #load packages
