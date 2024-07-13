@@ -1,0 +1,23 @@
+---
+title: "when reorder fails"
+output: md_document
+date: "2024-07-13"
+---
+
+I am using the "mpg" dataset included in the ggplot2 package.
+
+```{r message=FALSE, warning=FALSE}
+#load packages
+library(tidyverse)
+```
+
+```{r message=FALSE, warning=FALSE}
+#view data
+glimpse(mpg)
+```
+
+```{r message=FALSE, warning=FALSE}
+
+
+```
+

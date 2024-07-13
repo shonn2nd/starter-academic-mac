@@ -1,0 +1,64 @@
+---
+title: "when reorder fails"
+output: md_document
+date: "2024-07-13"
+---
+
+I am using the "mpg" dataset included in the ggplot2 package.
+
+```{r message=FALSE, warning=FALSE}
+#load packages
+library(tidyverse)
+library(tidytext)
+```
+
+```{r message=FALSE, warning=FALSE}
+#view data
+glimpse(mpg)
+```
+
+```{r message=FALSE, warning=FALSE}
+mpg %>% 
+  group_by(trans) %>% 
+  count() %>% 
+  ungroup() %>% 
+  ggplot(mapping = aes(trans, n)) +
+  geom_bar(stat = "identity")
+
+```
+
+This plot is ok, but how about arranging the order of trans by frequency? We can use `reorder`.
+
+```{r message=FALSE, warning=FALSE}
+mpg %>% 
+  group_by(trans) %>% 
+  count() %>% 
+  ungroup() %>% 
+  ggplot(mapping = aes(reorder(trans, n), n)) +
+  geom_bar(stat = "identity")
+
+```
+
+Ok, this is what we want. Let's work with a more complicated example. We want the relation between the distribution of trans varied by drv.
+
+```{r message=FALSE, warning=FALSE}
+mpg %>% 
+  group_by(drv, trans) %>% 
+  count() %>% 
+  ungroup() %>% 
+  ggplot(mapping = aes(reorder(trans, n), n)) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ drv, scale = "free")
+```
+
+`reorder` doesn't work well with a third-dimension variable. Use `reorder_within` (in **tidytext** package) instead
+
+```{r message=FALSE, warning=FALSE}
+mpg %>% 
+  group_by(drv, trans) %>% 
+  count() %>% 
+  ungroup() %>% 
+  ggplot(mapping = aes(reorder_within(trans, n, drv), n)) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ drv, scale = "free")
+```
