@@ -5,10 +5,7 @@ role: Assistant Professor at National Taipei University of Technology
 output: pdf_document
 bio:
 interests: 
-  - _M_otivation (achievement motivation & work motivation)
-  - _E_xpertise (self-regulatory processes)
-  - _T_raining with Technology
-  - _A_nalysis
+  - PhD in Educational Studies
 education:
   courses:
   - course: PhD in Educational Studies
@@ -55,6 +52,6 @@ organizations:
   url: https://www-en.ntut.edu.tw/
 ---
 
-Dr. Shonn Cheng received his Ph.D. in Educational Studies at The Ohio State University (USA) in summer 2019. Thereafter, he pursued one-year postdoctoral training at Virginia Commonwealth University (USA). During 2020-2022, he worked as an Assistant Professor in the Department of Instructional Systems Design and Technology at Sam Houston State University (USA). Currently, Dr. Cheng is an Assistant Professor in the Graduate Institute of Technological and Vocational Education at National Taipei University of Technology (Taiwan).
+Dr. Shonn Cheng received his Ph.D. in Educational Studies at The Ohio State University (USA) in summer 2019. Thereafter, he pursued one-year postdoctoral training at Virginia Commonwealth University (USA). During 2020-2022, he worked as an Assistant Professor in the Department of Instructional Systems Design and Technology at Sam Houston State University (USA). Currently, Dr. Cheng is an Assistant Professor in the Graduate Institute of Technological and Vocational Education at National Taipei University of Technology.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv.pdf" "newtab" >}}Curriculum Vitae{{< /staticref >}}.
