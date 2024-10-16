@@ -5,7 +5,7 @@ role: Assistant Professor at National Taipei University of Technology
 output: pdf_document
 bio:
 interests: 
-  - M**otivation (achievement motivation/work motivation)
+  - Motivation (achievement motivation/work motivation)
   - Expertise (self-regulatory processes)
   - Training with Technology
   - Analysis (mainly quantitative but also interested in qualitative and mixed methods)
