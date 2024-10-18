@@ -55,6 +55,6 @@ organizations:
   url: https://www-en.ntut.edu.tw/
 ---
 
-Dr. Shonn Cheng received his Ph.D. in Educational Studies at The Ohio State University (USA) in summer 2019. Thereafter, he pursued one-year postdoctoral training at Virginia Commonwealth University (USA). During 2020-2022, he worked as an Assistant Professor in the Department of Instructional Systems Design and Technology at Sam Houston State University (USA). Currently, Dr. Cheng is an Assistant Professor in the Graduate Institute of Technological and Vocational Education at National Taipei University of Technology (Taiwan) and the Director of [the META Lab](https://135201.netlify.app/)
+Dr. Shonn Cheng received his Ph.D. in Educational Studies at The Ohio State University (USA) in summer 2019. Thereafter, he pursued one-year postdoctoral training at Virginia Commonwealth University (USA). During 2020-2022, he worked as an Assistant Professor in the Department of Instructional Systems Design and Technology at Sam Houston State University (USA). Currently, Dr. Cheng is an Assistant Professor in the [Graduate Institute of Technological and Vocational Education](https://wwwtve.ntut.edu.tw/index.php?Lang=en) at National Taipei University of Technology (Taiwan) and the Director of the [META](https://135201.netlify.app/) Lab.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv.pdf" "newtab" >}}Curriculum Vitae{{< /staticref >}}.
