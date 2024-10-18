@@ -5,10 +5,10 @@ role: Assistant Professor at National Taipei University of Technology
 output: pdf_document
 bio:
 interests: 
-  - Motivation (achievement motivation/work motivation)
-  - Expertise (self-regulatory processes)
+  - Motivation
+  - Expertise
   - Training with Technology
-  - Analysis (mainly quantitative but also interested in qualitative and mixed methods)
+  - Analysis
 education:
   courses:
   - course: PhD in Educational Studies
